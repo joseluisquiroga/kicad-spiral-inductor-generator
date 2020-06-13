@@ -9,7 +9,7 @@
 
 void
 spiral_printer::print_help(){
-	fprintf(stderr, "%s [-r <inner_radius in um>] [-w <width in um>] [-g <gap in um>] [-s <num_sides>] [-n <num_turns>] [-c]\n", prg_nm.c_str());
+	fprintf(stderr, "%s [-r <inner_radius in um>] [-w <width in um>] [-g <gap in um>] [-s <num_sides>] [-t <num_turns>] [-c]\n", prg_nm.c_str());
 }
 
 void 
@@ -68,7 +68,7 @@ spiral_printer::get_args(sg_str_list_t& lt_args){
 			gap = atol(the_arg.c_str());
 			gap /= 1000.0;
 		}
-		else if((the_arg == "-n") && (lt_args.size() > 1)){
+		else if((the_arg == "-t") && (lt_args.size() > 1)){
 			dec_args(lt_args); did_some = true;
 
 			the_arg = lt_args.front(); dec_args(lt_args);
